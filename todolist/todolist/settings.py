@@ -38,7 +38,6 @@ INSTALLED_APPS = [
     'rest_framework',
     'django_filters',
     'social_django',
-    'pydantic',
     'core',
     'goals',
     'bot',
