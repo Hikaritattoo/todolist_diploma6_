@@ -15,6 +15,7 @@ from todolist import settings
 
 logger = logging.getLogger(__name__)
 
+
 class NewGoal(BaseModel):
     category_id: int | None = None
     goal_title: str | None = None
@@ -132,7 +133,7 @@ class Command(BaseCommand):
             }
         )
         if tg_user.user:
-            self.tg_client.send_message(chat_id=msg.chat.id, text='You have been already verified')
+            self.handle_verified_user(msg=msg, tg_user=tg_user)
         else:
             self.handle_unverified_user(msg=msg, tg_user=tg_user)
 
